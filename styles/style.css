@@ -1,0 +1,50 @@
+/* ---------- GLOBAL STYLES --------- */
+body {
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+}
+
+/* ---------- HOME --------- */
+#someUniqueElement {
+
+}
+
+.some-reused-element {
+
+}
+
+/* ---------- SOME PAGE --------- */
+
+/* ---------- MEDIA QUERIES --------- */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
