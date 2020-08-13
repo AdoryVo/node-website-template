@@ -8,7 +8,7 @@ const path = require('path');
 
 // CUSTOM MODULES
 const mysqlPlus = require('./mysql-plus.js');
-// const extraModules = require('./extra-modules');
+// const goodies = require('./goodies.js');
 
 // CONSTANTS
 const app = express();
@@ -23,7 +23,7 @@ const con = mysql.createConnection({
 
 // FUNCTIONS
 function updatePackages() {
-    require('update-packages').update();
+    require('./update-packages.js').update();
 }
 
 // INITIALIZATION
