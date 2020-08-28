@@ -20,19 +20,20 @@ Use this template to initialize your Node.js and Express run website with a basi
   <li>cookie-parser</li>
  </ul>
  
- ### Supplemental Ease of Access Modules Included
- <ul>
+### Supplemental Ease of Access Modules Included
+<ul>
   <li>mysql-plus - functions for easily executing mysql queries</li>
-  <li>update-packages - script to replace old package files with newly updated ones</li> 
+  <li>update-packages - script to replace old package files with newly updated ones (Bootstrap, Font Awesome, jQuery, Popper)</li> 
   <li>goodies - variety of functions for different purposes (ex: encrypt() function)</li>
- </ul>
+</ul>
 
 ## Future Release Plans
 <ul>
   <li>More detailed starter code</li>
   <li>Additional example pages</li>
   <li>More features in 'goodies' module</li>
- </ul>
+  <li>Complete JSDoc for custom modules</li>
+</ul>
 
 ## Additional Resources
 Google JavaScript Style Guide: https://google.github.io/styleguide/jsguide.html

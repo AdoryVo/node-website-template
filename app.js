@@ -1,4 +1,4 @@
-// PACKAGES
+/* ---------- PACKAGES --------- */
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
@@ -6,11 +6,11 @@ const cookieParser = require('cookie-parser');
 const favicon = require('serve-favicon');
 const path = require('path');
 
-// CUSTOM MODULES
+/* ---------- CUSTOM MODULES --------- */
 const mysqlPlus = require('./mysql-plus.js');
 // const goodies = require('./goodies.js');
 
-// CONSTANTS
+/* ---------- CONSTANTS --------- */
 const app = express();
 const hostname = 'localhost';
 const port = 3000; // Port 3000 -> localhost:3000
@@ -21,24 +21,30 @@ const con = mysql.createConnection({
     password: ''
 });
 
-// FUNCTIONS
+/* ---------- FUNCTIONS --------- */
 function updatePackages() {
     require('./update-packages.js').update();
 }
 
-// INITIALIZATION
+/* ---------- INITIALIZATION --------- */
 app.use(express.static(__dirname + '/public')); // url path begins at /public
 app.use(bodyParser.urlencoded({extended: false})); // parse application/x-www-form-urlencoded
 app.use(cookieParser());
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico'))); // go to http://localhost:3000/favicon.ico to refresh icon
 
-// - MySQL Setup
-con.connect();
+/* ---------- REQUEST METHODS --------- */
+app.get('/', async (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+/* ---------- MYSQL QUERIES --------- */
 mysqlPlus.use(con);
-/*
-mysqlPlus.createDB('project-name');
-mysqlPlus.conDB('project-name');
-*/
+
+//mysqlPlus.createDB('project-name');
+//mysqlPlus.conDB('project-name');
 mysqlPlus.showDBs();
 
+//mysqlPlus.createTable('users', {username: 'str', email: 'str', password: 'str'});
+
+/* ---------- LAUNCH --------- */
 app.listen(port, hostname, () => console.log(`Server running at http://${hostname}:${port}/!`));
