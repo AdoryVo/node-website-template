@@ -17,18 +17,19 @@ exports.conDB = (dbName) => {
 /* ---------- QUERY FUNCTIONS --------- */
 /**
  * MySQL query without placeholders.
- * @param {{query: string, action: function(Array), info: string, message: string}=} options Options for MySQL query.
+ * @param {{query: string, action: function(Array), request: function(Array), info: string, message: string}=} options Options for MySQL query.
  */
 exports.query = (options = {}) => {
     return new Promise((resolve, reject) => {
         exports.con.query(options.query, function (err, result, fields) {
             if (err) return reject(err);
 
-            if (options.action) options.action(result);
-
             if (options.info) console.log(options.info);
             console.log(options.message ? options.message : result);
             console.log('');
+
+            if (options.action) options.action(result);
+            if (options.request) result = options.request(result);
 
             return resolve(result);
         });
@@ -37,18 +38,19 @@ exports.query = (options = {}) => {
 
 /**
  * Query involving an escape string and placeholders.
- * @param {{query: string, placeholders: Array, action: function(Array), info: string, message: string}=} options Options for MySQL query.
+ * @param {{query: string, placeholders: Array, action: function(Array), request: function(Array), info: string, message: string}=} options Options for MySQL query.
  */
 exports.escQuery = (options = {}) => {
     return new Promise((resolve, reject) => {
         exports.con.query(options.query, options.placeholders, function (err, result, fields) {
             if (err) return reject(err);
 
-            if (options.action) options.action(result);
-
             if (options.info) console.log(options.info);
             console.log(options.message ? options.message : result);
             console.log('');
+
+            if (options.action) options.action(result);
+            if (options.request) result = options.request(result);
 
             return resolve(result);
         });

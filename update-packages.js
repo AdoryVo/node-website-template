@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-exports.update = function () {
+exports.updatePackages = function () {
     // npm install bootstrap, jquery, @popperjs/core, --save @fortawesome/fontawesome-free
     fs.copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/styles/bootstrap.min.css');
     fs.copy('node_modules/bootstrap/dist/css/bootstrap.min.css.map', 'public/styles/bootstrap.min.css.map');

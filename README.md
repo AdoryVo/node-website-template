@@ -1,6 +1,11 @@
 # node-website-template
 Use this template to initialize your Node.js and Express run website with a basic structure and starter code that utilizes several packages (listed below).
 
+<i>Work In Progress</i>
+
+## Usage Details
+Run npm install from the root folder to install packages.
+
 ## Current Release Details
 <b>Bootstrap</b> v4.5.2
 <br>
@@ -8,16 +13,19 @@ Use this template to initialize your Node.js and Express run website with a basi
 
 ### Packages Included
 <ul>
-  <li>@fortawesome/fontawesome-free</li>
-  <li>@popperjs/core</li>
-  <li>body-parser</li>
-  <li>bootstrap</li>
-  <li>express</li>
-  <li>fs-extra</li>
-  <li>jquery</li>
-  <li>mysql</li>
-  <li>serve-favicon</li>
-  <li>cookie-parser</li>
+  <li>@fortawesome/fontawesome-free - icons</li>
+  <li>@popperjs/core - dependency for bootstrap</li>
+  <li>body-parser - essential for express</li>
+  <li>bootstrap - front-end features</li>
+  <li>express - essential</li>
+  <li>fs-extra - for update-packages and file io</li>
+  <li>jquery - essential</li>
+  <li>mysql - database functionality</li>
+  <li>serve-favicon - favicon functionality</li>
+  <li>bcrypt - encryption</li>
+  <li>passport - secure authentication</li>
+  <li>passport-local - authentication strategy for passport</li>
+  <li>DOMPurify & JSDOM - sanitization</li>
  </ul>
  
 ### Supplemental Ease of Access Modules Included
@@ -33,6 +41,7 @@ Use this template to initialize your Node.js and Express run website with a basi
   <li>Additional example pages</li>
   <li>More features in 'goodies' module</li>
   <li>Complete JSDoc for custom modules</li>
+  <li>Template for Sign up and log in?</li>
 </ul>
 
 ## Additional Resources
@@ -43,6 +52,10 @@ Bootstrap Docs: https://getbootstrap.com/docs
 Font Awesome Free Icons Gallery: https://fontawesome.com/icons?d=gallery&m=free
 <br>
 Express 4.x API Docs: https://expressjs.com/en/4x/api.html
+<br>
+NPM MySQL Docs: https://github.com/mysqljs/mysql
+<br>
+Passport.js Docs: http://www.passportjs.org/docs/
 <br>
 Can I Use... - Browser support tables for HTML5, CSS3, etc: https://caniuse.com
 <br>
