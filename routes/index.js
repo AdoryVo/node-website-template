@@ -1,18 +1,18 @@
 /* ---------- PACKAGES ---------- */
 const express = require('express');
 const path = require('path');
-const passport = require('passport');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 
 /* ---------- CUSTOM MODULES ---------- */
 const goodies = require('../goodies.js');
-const mysqlPlus = require('../mysql-plus.js');
 
 /* ---------- CONSTANTS ---------- */
 const router = express.Router();
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
+
+/* ---------- FUNCTIONS  ---------- */
 const sanitize = DOMPurify.sanitize;
 
 /* ---------- REQUEST METHODS ---------- */

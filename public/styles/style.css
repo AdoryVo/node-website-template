@@ -1,8 +1,10 @@
 /* ---------- GLOBAL STYLES ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding-top: 3.5rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
 }
 
 /* ---------- HOME ---------- */

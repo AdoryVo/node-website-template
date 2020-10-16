@@ -7,30 +7,25 @@ Use this template to initialize your Node.js and Express run website with a basi
 Run npm install from the root folder to install packages.
 
 ## Current Release Details
-<b>Bootstrap</b> v4.5.2
+<b>Bootstrap</b> v4.5.3
 <br>
-<b>Font Awesome</b> v5.14.0
+<b>Font Awesome</b> v5.15.1
 
 ### Packages Included
 <ul>
   <li>@fortawesome/fontawesome-free - icons</li>
-  <li>@popperjs/core - dependency for bootstrap</li>
   <li>body-parser - essential for express</li>
   <li>bootstrap - front-end features</li>
   <li>express - essential</li>
   <li>fs-extra - for update-packages and file io</li>
   <li>jquery - essential</li>
-  <li>mysql - database functionality</li>
   <li>serve-favicon - favicon functionality</li>
   <li>bcrypt - encryption</li>
-  <li>passport - secure authentication</li>
-  <li>passport-local - authentication strategy for passport</li>
   <li>DOMPurify & JSDOM - sanitization</li>
  </ul>
  
 ### Supplemental Ease of Access Modules Included
 <ul>
-  <li>mysql-plus - functions for easily executing mysql queries</li>
   <li>update-packages - script to replace old package files with newly updated ones (Bootstrap, Font Awesome, jQuery, Popper)</li> 
   <li>goodies - variety of functions for different purposes (ex: encrypt() function)</li>
 </ul>
@@ -41,7 +36,8 @@ Run npm install from the root folder to install packages.
   <li>Additional example pages</li>
   <li>More features in 'goodies' module</li>
   <li>Complete JSDoc for custom modules</li>
-  <li>Template for Sign up and log in?</li>
+  <li>Template for sign up and log in pages?</li>
+  <li>Database functionality</li>
 </ul>
 
 ## Additional Resources
