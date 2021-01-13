@@ -16,9 +16,6 @@ const port = 3000 || process.env.PORT; // Port 3000 -> localhost:3000
 
 /* ---------- INITIALIZATION ---------- */
 /* ----- Dotenv ----- */
-if (dotenv_result.error) {
-    throw dotenv_result.error;
-}
 
 /* ----- Express ----- */
 app.use(express.static(__dirname + '/dist')); // url path begins at /dist
