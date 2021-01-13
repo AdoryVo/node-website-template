@@ -1,0 +1,15 @@
+{
+  "name": "Node.js/Express Website Template",
+  "short_name": "Node Website Template",
+  "icons": [
+    {
+      "src": "dist/images/150x150-Placeholder.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=a2hs",
+  "theme_color": "#93c5fd",
+  "background_color": "#93c5fd",
+  "display": "standalone"
+}
