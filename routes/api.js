@@ -1,4 +1,4 @@
-/* ---------- PACKAGES ---------- */
+/* ---------- MODULES ---------- */
 const bodyParser = require('body-parser');
 const createDOMPurify = require('dompurify');
 const express = require('express');

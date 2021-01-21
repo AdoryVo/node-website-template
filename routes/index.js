@@ -1,4 +1,4 @@
-/* ---------- PACKAGES ---------- */
+/* ---------- MODULES ---------- */
 const express = require('express');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
