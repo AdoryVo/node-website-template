@@ -9,8 +9,7 @@ const path = require('path');
 
 /* ---------- CONSTANTS ---------- */
 const app = express();
-const hostname = 'localhost';
-const port = 3000 || process.env.PORT; // Port 3000 -> localhost:3000
+const port = process.env.PORT || 3000; // Port 3000 -> localhost:3000
 
 /* ---------- FUNCTIONS ---------- */
 
@@ -28,4 +27,4 @@ app.use('/', require('./routes/index.js'));
 app.use('/api', require('./routes/api.js'));
 
 /* ---------- LAUNCH ---------- */
-app.listen(port, hostname, () => console.log(`Server running at http://${hostname}:${port}/\n`));
+app.listen(port, () => console.log(`Server running at http://localhost:${port}/\n`));
