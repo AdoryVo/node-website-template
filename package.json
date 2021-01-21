@@ -2,6 +2,11 @@
   "name": "node-website-template",
   "version": "1.0.0",
   "main": "index.js",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdoryVo/node-website-template.git"
+  },
   "scripts": {
     "build:css": "tailwind build src/style.css -o dist/styles/style.css",
     "build:html": "ejs ./views/index.ejs -o ./dist/index.html",
@@ -25,6 +30,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "browserify": "^17.0.0",
     "nodemon": "^2.0.7"
   }
 }
