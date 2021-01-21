@@ -11,7 +11,8 @@
     "build:css": "tailwind build src/style.css -o dist/styles/style.css",
     "build:html": "ejs ./views/index.ejs -o ./dist/index.html",
     "build:js": "browserify src/main.js -o dist/scripts/bundle.js",
-    "build": "npm run build:css && npm run build:js"
+    "build": "npm run build:css && npm run build:js",
+    "start": "node index.js"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",
