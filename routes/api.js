@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const createDOMPurify = require('dompurify');
 const express = require('express');
 const { JSDOM } = require('jsdom');
+const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const path = require('path');
 
@@ -20,6 +21,9 @@ function logCall(route) {
 
 /* ---------- INITIALIZATION ---------- */
 /* ----- Express ----- */
+// override with POST having ?_method=DELETE or ?_method=PUT
+app.use(methodOverride('_method'))
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}))
 
@@ -29,27 +33,30 @@ app.use(bodyParser.json())
 /* ----- Mongoose ----- */
 mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`, {useNewUrlParser: true, useUnifiedTopology: true})
     .catch((err) => console.log(err));
-const UserModel = require('../models/UserModel');
+const User = require('../models/User');
 
 /* ---------- ROUTES ---------- */
+// GET /api - Show API documentation.
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(__dirname, 'api-docs.html'));
 });
 
+// GET /api/users - Gets a JSON of all users.
 router.get('/users', (req, res) => {
     logCall('GET /api/users');
 
-    UserModel.find()
+    User.find()
         .then((users) => res.json(users))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// POST /api/createUser - Create a user.
 router.post('/createUser', async (req, res) => {
     logCall('POST /api/createUser');
 
-    const name = req.body.name;
+    const name = DOMPurify.sanitize(req.body.name);
 
-    const user = new UserModel({
+    const user = new User({
         name
     });
 
@@ -58,20 +65,22 @@ router.post('/createUser', async (req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// GET /api/getUser/:id - Get a JSON of a user's data.
 router.get('/getUser/:id', (req, res) => {
     logCall('GET /api/getUser');
 
-    UserModel.findById(req.params.id)
+    User.findById(req.params.id)
         .then((user) => res.json(user))
         .catch(err => res.status(400).json('Error: ' + err));
 })
 
+// POST /api/updateUser/:id - Update a user.
 router.post('/updateUser/:id', (req, res) => {
     logCall('POST /api/updateUser');
 
-    UserModel.findById(req.params.id)
+    User.findById(req.params.id)
         .then((user) => {
-            user.name = req.body.name;
+            user.name = DOMPurify.sanitize(req.body.name);
 
             user.save()
                 .then(() => res.redirect('/users'))
@@ -80,10 +89,11 @@ router.post('/updateUser/:id', (req, res) => {
         .catch((err) => res.status(400).json('Error: ' + err));
 });
 
+// DELETE /api/deleteUser/:id - Delete a user.
 router.delete('/deleteUser/:id', (req, res) => {
     logCall('DELETE /api/deleteUser');
 
-    UserModel.findByIdAndDelete(req.params.id)
+    User.findByIdAndDelete(req.params.id)
         .then(() => res.redirect('/users'))
         .catch(err => res.status(400).json('Error: ' + err));
 });

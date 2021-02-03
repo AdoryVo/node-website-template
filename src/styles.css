@@ -1,25 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ---------- IMPORTS ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* ---------- GLOBAL STYLES ---------- */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background-color: #93c5fd;
-
-    /* Background Pattern */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23bfdbfe' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-td {
-    @apply border border-yellow-500 px-4 py-2 text-yellow-600 font-medium
-}
-
-dt {
-
+    padding-top: 3.5rem;
+    font-family: 'Inter', sans-serif;
 }
 
 /* ---------- HOME ---------- */
