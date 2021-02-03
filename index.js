@@ -1,5 +1,5 @@
 /* ---------- MODULES ---------- */
-const dotenv_result = require('dotenv').config();
+const DOTENV_RESULT = require('dotenv').config();
 const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');

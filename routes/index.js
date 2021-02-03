@@ -4,7 +4,6 @@ const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 
 /* ---------- CUSTOM MODULES ---------- */
-const goodies = require('../goodies.js');
 
 /* ---------- CONSTANTS ---------- */
 const router = express.Router();

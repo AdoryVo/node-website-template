@@ -3,8 +3,8 @@
   "short_name": "Node Website Template",
   "icons": [
     {
-      "src": "dist/images/150x150-Placeholder.png",
-      "sizes": "150x150",
+      "src": "dist/images/favicon.ico",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],

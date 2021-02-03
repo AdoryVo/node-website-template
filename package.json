@@ -8,30 +8,34 @@
     "url": "git+https://github.com/AdoryVo/node-website-template.git"
   },
   "scripts": {
-    "build:css": "tailwind build src/style.css -o dist/styles/style.css",
+    "build:css": "sass src/custom.scss dist/styles/bootstrap.css && postcss src/styles.css --use autoprefixer -d dist/styles/",
     "build:html": "ejs ./views/index.ejs -o ./dist/index.html",
-    "build:js": "browserify src/main.js -o dist/scripts/bundle.js",
+    "build:js": "browserify src/main.js | uglifyjs > dist/scripts/bundle.js",
     "build": "npm run build:css && npm run build:js",
     "start": "node index.js"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.3.1",
+    "@popperjs/core": "^2.6.0",
     "autoprefixer": "^10.2.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "bootstrap": "^5.0.0-beta1",
     "dompurify": "^2.2.6",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "jsdom": "^16.4.0",
+    "method-override": "^3.0.0",
     "mongoose": "^5.11.11",
     "postcss": "^8.2.4",
-    "serve-favicon": "^2.5.0",
-    "tailwindcss": "^2.0.2"
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.6",
+    "uglify-js": "^3.12.6"
   }
 }
