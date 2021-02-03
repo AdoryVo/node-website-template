@@ -1,5 +1,5 @@
 # node-website-template
-Use this template to initialize your MongoDB, Express, and Node.js website with a basic structure and starter code stylized with Bootstrap CSS.
+Use this template to initialize your MongoDB, Express, and Node.js website with a basic structure and starter code stylized with Bootstrap.
 
 *Work In Progress*
 
@@ -50,10 +50,13 @@ Run `npm run build:js` to compile (w/ browserify) JavaScript libraries from the 
 * bootstrap - styling
 * body-parser - essential for express
 * browserify & uglifyjs - compiling and minifying JS
+* chalk - colorful terminal output
+* compression - performance
 * dotenv - environment variables
 * dompurify & jsdom - sanitization
 * ejs - template engine for server data access
 * express - essential
+* express-session - session shenanigans
 * jquery - dynamic page elements
 * method-override - enabling methods for the client
 * mongoose - database functionality
@@ -69,7 +72,7 @@ Run `npm run build:js` to compile (w/ browserify) JavaScript libraries from the 
 
 ## Additional Resources
 Google JavaScript Style Guide: https://google.github.io/styleguide/jsguide.html  
-Bootstrap CSS Docs: https://getbootstrap.com/  
+Bootstrap Docs: https://getbootstrap.com/  
 Bootstrap Icons: https://icons.getbootstrap.com/#usage  
 Express 4.x API Docs: https://expressjs.com/en/4x/api.html  
 Mongoose (MongoDB) Docs: https://mongoosejs.com/docs/api.html  

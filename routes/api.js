@@ -1,4 +1,5 @@
 /* ---------- MODULES ---------- */
+const chalk = require('chalk');
 const createDOMPurify = require('dompurify');
 const express = require('express');
 const { JSDOM } = require('jsdom');
@@ -6,7 +7,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 /* ---------- CONSTANTS ---------- */
-const app = express();
 const DB_NAME = 'node-website-template';
 const MONGO_URI = process.env.MONGO_URI || `mongodb://localhost:27017/${DB_NAME}`;
 const router = express.Router();
@@ -15,7 +15,7 @@ const DOMPurify = createDOMPurify(window); // Use DOMPurify.sanitize(dirty) on i
 
 /* ---------- FUNCTIONS ---------- */
 function logCall(route) {
-    console.log(`API Call: ${route} at ${new Date().toUTCString()}`);
+    console.log(chalk.yellow(`- API Call: ${route} at ${new Date().toUTCString()}`));
 }
 
 /* ---------- INITIALIZATION ---------- */

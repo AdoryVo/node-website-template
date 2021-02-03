@@ -9,6 +9,6 @@ function someFunction(someParam) {
 }
 
 // Requires jQuery
-$('#someBtn').click(function () {
-    $('body').css('background-color', '#2a3b4a');
+$('#someBtn').click((event) => {
+    console.log($(event.currentTarget));
 });
