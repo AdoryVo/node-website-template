@@ -7,11 +7,25 @@ Use this template to initialize your MongoDB, Express, and Node.js website with 
 Download Node: https://nodejs.org/en/download/  
 Download nodemon globally: https://www.npmjs.com/package/nodemon  
 Download MongoDB: https://www.mongodb.com/try/download/community  
+
+### Scripts
 Run `npm install` in the root directory to install packages.  
 Run `npm run build` to compile CSS and Javascript from the `src` folder.  
 Run `npm run build:css` to compile Bootstrap CSS from the `src` folder.  
 Run `npm run build:js` to compile (w/ browserify) JavaScript libraries from the `src` folder.  
-Create a `.env` file to hold environment variables. ([dotenv module](https://www.npmjs.com/package/dotenv))
+
+### Initialization
+1. Create a `.env` file to hold environment variables. ([dotenv module](https://www.npmjs.com/package/dotenv))
+2. Edit the name of your database by editing the `DB_NAME` constant in `routes/api.js`.
+3. Edit metadata information for SEO and data accuracy in:
+   * `package.json`
+   * `README.md` 
+   * `src/manifest.json`
+   * `src/robots.txt`
+   * `src/sitemap.xml`
+   * `views/index.ejs`
+
+### Directory Details
 1. The `dist` directory contains the front-end.
 2. The `models` directory contains Mongoose models.
 3. The `routes` directory contains routes for endpoints and API calls.
@@ -22,18 +36,19 @@ Create a `.env` file to hold environment variables. ([dotenv module](https://www
 ## Usage/Workflow Details
 1. Ensure that your MongoDB server is running locally for database functionality. (MongoDB Compass)  
 2. Run `nodemon` in your terminal while testing to automatically refresh your back-end after editing it.  
-3. Edit CSS in `src/style.css` and compile it with `npm run build:css` to update `dist/styles/style.css`.
-4. Create front-end by creating HTML pages in the `views` directory.
+3. Edit CSS in `src/styles.css` and compile it with `npm run build:css` to update `dist/styles/styles.css`.
+4. Create front-end by creating HTML pages w/ EJS in the `views` directory.
 5. Work on back-end by editing the routes and `index.js`.
 
 ## Current Release Details
-**Bootstra CSS** v5.0.0  
+**Bootstrap CSS** v5.0.0  
 **Bootstrap Icons** v1.3.0
 
 ### Packages Included
 * bcrypt - encryption
 * bootstrap - styling
 * body-parser - essential for express
+* browserify & uglifyjs - compiling and minifying JS
 * dotenv - environment variables
 * dompurify & jsdom - sanitization
 * ejs - template engine for server data access
@@ -42,8 +57,9 @@ Create a `.env` file to hold environment variables. ([dotenv module](https://www
 * method-override - enabling methods for the client
 * mongoose - database functionality
 * nodemon - development quality of life
+* postcss & autoprefixer - CSS autoprefixing
+* sass - customizing and compiling Bootstrap
 * serve-favicon - favicon functionality
-* tailwindcss - front-end
 
 ## Future Release Plans
 * More detailed starter code
