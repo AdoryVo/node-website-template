@@ -24,6 +24,7 @@ Run `npm run build:js` to compile (w/ browserify) JavaScript libraries from the 
    * `src/robots.txt`
    * `src/sitemap.xml`
    * `views/index.ejs`
+4. Run `npm install` to install packages.
 
 ### Directory Details
 1. The `dist` directory contains the front-end.

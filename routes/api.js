@@ -1,15 +1,14 @@
 /* ---------- MODULES ---------- */
-const bodyParser = require('body-parser');
 const createDOMPurify = require('dompurify');
 const express = require('express');
 const { JSDOM } = require('jsdom');
-const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const path = require('path');
 
 /* ---------- CONSTANTS ---------- */
 const app = express();
 const DB_NAME = 'node-website-template';
+const MONGO_URI = process.env.MONGO_URI || `mongodb://localhost:27017/${DB_NAME}`;
 const router = express.Router();
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window); // Use DOMPurify.sanitize(dirty) on inputs
@@ -21,17 +20,10 @@ function logCall(route) {
 
 /* ---------- INITIALIZATION ---------- */
 /* ----- Express ----- */
-// override with POST having ?_method=DELETE or ?_method=PUT
-app.use(methodOverride('_method'))
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
-
-// parse application/json
-app.use(bodyParser.json())
 
 /* ----- Mongoose ----- */
-mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
     .catch((err) => console.log(err));
 const User = require('../models/User');
 

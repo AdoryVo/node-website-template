@@ -17,4 +17,8 @@ router.get('/', async (req, res) => {
     res.render('../views/index.ejs');
 });
 
+router.get('/error', (req, res) => {
+    res.render('../views/404.ejs');
+});
+
 module.exports = router;
