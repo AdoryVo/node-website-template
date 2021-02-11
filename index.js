@@ -21,17 +21,17 @@ const port = process.env.PORT || 3000;
 
 /* ---------- FUNCTIONS ---------- */
 function updateFontAwesome() {
-    fs.copy('node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'dist/styles/fontawesome.css', (err) => {
+    fs.copy('./node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'dist/styles/fontawesome.css', (err) => {
         if (err) throw err;
     });
 
-    fs.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/webfonts', (err) => {
+    fs.copy('./node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/webfonts', (err) => {
         if (err) throw err;
     });
 }
 
 /* ---------- INITIALIZATION ---------- */
-updateFontAwesome();
+// updateFontAwesome();
 
 /* ----- Dotenv ----- */
 if (DOTENV_RESULT.error) {
@@ -87,7 +87,7 @@ app.use((req, res) => {
         default: () => {
             res.type('txt').send('Not found')
         }
-    })
+    });
 });
 
 /* ---------- LAUNCH ---------- */
