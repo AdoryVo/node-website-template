@@ -3,16 +3,16 @@
 <head>
     <%- include('layouts/head'); %>
 
-    <title>Page Not Found — Adory Vo</title>
+    <title>ThinkCorp — Page Not Found</title>
 </head>
 
 <body class="vh-100 overflow-hidden">
-<%- include('layouts/navbar', {active: ''}); %>
+<%- include('layouts/navbar'); %>
 
 <main class="h-75">
     <!-- Hero Section -->
-    <section class="container py-4 py-md-5 mb-4">
-        <h1 class="display-4 font-italic">Page Not Found</h1>
+    <section class="container py-4 py-md-5">
+        <h1>Page Not Found</h1>
         <p class="lead my-3">
             It seems like you've stumbled upon an invalid page! Contact the developers if this is unexpected.
         </p>
@@ -21,8 +21,8 @@
 
 <%- include('layouts/footer'); %>
 
-<!-- Bundled JS: jQuery, Bootstrap -->
-<script src="scripts/bundle.js"></script>
+<!-- Bundled JS: Bootstrap, jQuery, Lodash -->
+<script src="/scripts/bundle.js"></script>
 
 <!-- Custom Scripts -->
 </body>
