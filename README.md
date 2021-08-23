@@ -1,3 +1,5 @@
+# DEPRECATED/OUTDATED
+## This project has moved to another repo [here](https://github.com/alectrify/starter-node-express-bootstrap).
 # 📝 node-website-template
 Use this template to initialize your Express, MongoDB, and Node.js web application or website with a basic structure and starter code stylized with Bootstrap.
 
