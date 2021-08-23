@@ -1,3 +1,4 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 # DEPRECATED/OUTDATED
 ## This project has moved to another repo [here](https://github.com/alectrify/starter-node-express-bootstrap).
 # 📝 node-website-template
